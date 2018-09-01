@@ -68,8 +68,7 @@ public class MainActivity extends AppCompatActivity  {
         });
 
         consultarProyectos();
-
-
+        
 
     }
 

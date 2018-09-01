@@ -76,7 +76,7 @@ public class DefectLogActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnFechaDefectLog:
-                //obtenerFechaHora();
+                obtenerFechaHora();
                 break;
 
         }
@@ -89,6 +89,11 @@ public class DefectLogActivity extends AppCompatActivity implements View.OnClick
         DateFormat df = DateFormat.getDateInstance(DateFormat.LONG, Locale.US);
         myDate = df.parse(myString);
         */
+
+        // Format the current time.
+        Date date = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("hh:mm");
+
 
     }
 

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,12 +20,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TimeLogActivity"
+            android:name=".Activities.TimeLogActivity"
             android:label="@string/title_activity_time_log"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".DefectLogActivity"
+            android:name=".Activities.DefectLogActivity"
             android:label="@string/title_activity_defect_log"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.ProjectRegisterActivity"
+            android:label="@string/title_activity_project_register"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

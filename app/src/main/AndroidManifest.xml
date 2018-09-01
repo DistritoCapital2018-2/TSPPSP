@@ -19,6 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".TimeLogActivity"
+            android:label="@string/title_activity_time_log"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DefectLogActivity"
+            android:label="@string/title_activity_defect_log"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

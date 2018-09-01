@@ -2,10 +2,259 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Activities.DefectLogActivity"
     tools:showIn="@layout/activity_defect_log">
+
+    <TextView
+        android:id="@+id/tvTituloDefectLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="53dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/tvTituloDefectLog"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/etFechaDefectLog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDateDefectLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/tvDateDefectLog"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTypeDefectLog"
+        app:layout_constraintEnd_toStartOf="@+id/etFechaDefectLog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etFechaDefectLog"
+        android:layout_width="129dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/etFechaDefectLog"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDateDefectLog"
+        app:layout_constraintEnd_toStartOf="@+id/btnFechaDefectLog"
+        app:layout_constraintStart_toEndOf="@+id/tvDateDefectLog"
+        app:layout_constraintTop_toTopOf="@+id/tvDateDefectLog"
+        app:layout_constraintVertical_bias="0.689" />
+
+    <Button
+        android:id="@+id/btnFechaDefectLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/btnFechaDefectLog"
+        app:layout_constraintBottom_toBottomOf="@+id/etFechaDefectLog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etFechaDefectLog"
+        app:layout_constraintTop_toTopOf="@+id/etFechaDefectLog"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Spinner
+        android:id="@+id/spinnerTypeDefectLog"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTypeDefectLog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTypeDefectLog"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvTypeDefectLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tvTypeDefectLog"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPhaseInjectedDefectLog"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerTypeDefectLog"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFechaDefectLog" />
+
+    <TextView
+        android:id="@+id/tvPhaseInjectedDefectLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tvPhaseInjectedDefectLog"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPhaseRemovedDefectLog"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerInjectedDefectLog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTypeDefectLog" />
+
+    <Spinner
+        android:id="@+id/spinnerInjectedDefectLog"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPhaseInjectedDefectLog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvPhaseInjectedDefectLog"
+        app:layout_constraintTop_toTopOf="@+id/tvPhaseInjectedDefectLog"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvPhaseRemovedDefectLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="35dp"
+        android:text="@string/tvPhaseRemovedDefectLog"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvFixTimeDefectLog"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerRemovedDefectLog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhaseInjectedDefectLog" />
+
+    <Spinner
+        android:id="@+id/spinnerRemovedDefectLog"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPhaseRemovedDefectLog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvPhaseRemovedDefectLog"
+        app:layout_constraintTop_toTopOf="@+id/tvPhaseRemovedDefectLog"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvFixTimeDefectLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginEnd="175dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/tvFixTimeDefectLog"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnStopDefectLog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhaseRemovedDefectLog" />
+
+    <Button
+        android:id="@+id/btnRestartDefectLog"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/btnRestartDefectLog"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvTiempoDefectLog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnStopDefectLog"
+        app:layout_constraintTop_toBottomOf="@+id/tvFixTimeDefectLog"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnStopDefectLog"
+        android:layout_width="66dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/btnStopDefectLog"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvTiempoDefectLog"
+        app:layout_constraintEnd_toStartOf="@+id/btnRestartDefectLog"
+        app:layout_constraintStart_toEndOf="@+id/btnStartDefectLog"
+        app:layout_constraintTop_toBottomOf="@+id/tvFixTimeDefectLog" />
+
+    <Button
+        android:id="@+id/btnStartDefectLog"
+        android:layout_width="66dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/btnStartDefectLog"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvTiempoDefectLog"
+        app:layout_constraintEnd_toStartOf="@+id/btnStopDefectLog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFixTimeDefectLog"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvTiempoDefectLog"
+        android:layout_width="100dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/tvTiempoDefectLog"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStopDefectLog" />
+
+    <Button
+        android:id="@+id/btnRegistrarDefectLog"
+        android:layout_width="99dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/btnRegistrarDefectLog"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDescriptionDefectLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/tvDescriptionDefectLog"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegistrarDefectLog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTiempoDefectLog"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/etMultiline"
+        android:layout_width="236dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="@string/etMultiline"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDescriptionDefectLog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvDescriptionDefectLog" />
 
 </android.support.constraint.ConstraintLayout>

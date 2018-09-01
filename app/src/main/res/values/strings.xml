@@ -24,4 +24,21 @@
     <string name="tvFechaFinalTL">Fecha Final</string>
     <string name="tvComentariosTL">Ingresa tus comentarios del Proyecto</string>
     <string name="tvInterrupcionesTL">Ingresa interrupciones</string>
+    <!-- Defect Log-->
+    <string name="tvTituloDefectLog">Defect Log</string>
+    <string name="tvDateDefectLog">Date:</string>
+    <string name="etFechaDefectLog">Text</string>
+    <string name="btnFechaDefectLog">Obtener fecha</string>
+    <string name="tvPhaseInjectedDefectLog">Phase Injected:</string>
+    <string name="tvPhaseRemovedDefectLog">Phase Rejected:</string>
+    <string name="tvFixTimeDefectLog">Fix Time:</string>
+    <string name="tvTypeDefectLog">Type::</string>
+    <string name="tvTiempoDefectLog">Tiempo</string>
+    <string name="btnRestartDefectLog">Restart</string>
+    <string name="btnStopDefectLog">Stop</string>
+    <string name="btnStartDefectLog">Start</string>
+    <string name="btnRegistrarDefectLog">Registrar</string>
+    <string name="tvDescriptionDefectLog">Defect Description:</string>
+    <string name="etMultiline">Name</string>
+
 </resources>

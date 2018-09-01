@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void abrirActivityRegisto() {
-        startActivity(new Intent(this, ProjectRegisterActivity.class));
+        startActivity(new Intent(this, DefectLogActivity.class));
     }
 
 

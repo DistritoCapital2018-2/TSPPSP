@@ -49,7 +49,6 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/etFechaDefectLog"
         app:layout_constraintBottom_toBottomOf="@+id/tvDateDefectLog"
         app:layout_constraintEnd_toStartOf="@+id/btnFechaDefectLog"
         app:layout_constraintStart_toEndOf="@+id/tvDateDefectLog"
@@ -246,8 +245,8 @@
 
     <EditText
         android:id="@+id/etMultiline"
-        android:layout_width="236dp"
-        android:layout_height="46dp"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="textMultiLine"
@@ -255,6 +254,7 @@
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvDescriptionDefectLog"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvDescriptionDefectLog"
         app:layout_constraintTop_toTopOf="@+id/tvDescriptionDefectLog" />
 
 </android.support.constraint.ConstraintLayout>

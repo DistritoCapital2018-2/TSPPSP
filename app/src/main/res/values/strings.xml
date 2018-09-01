@@ -11,4 +11,17 @@
     <string name="et_alert_d_nombre_proyecto">Ingresa el nombre del Proyecto</string>
     <string name="btn_alert_d_registrar_proyecto">Registrar Proyecto</string>
     <string name="title_activity_project_register">ProjectRegisterActivity</string>
+    <string name="tvTitleTimeLog">TimeLog</string>
+    <string name="tvPhaseTL">Phase</string>
+    <string name="tvStartTL">Start</string>
+    <string name="btnIniciarTL">Iniciar</string>
+    <string name="tvInterruptionTL">Interruption</string>
+    <string name="tvStopTL">Stop</string>
+    <string name="btnPararTL">Parar</string>
+    <string name="tvCommentsTL">Comments</string>
+    <string name="btnRegistrarTL">Registrar</string>
+    <string name="etFechaInicioTL">Fecha Inicio</string>
+    <string name="tvFechaFinalTL">Fecha Final</string>
+    <string name="tvComentariosTL">Ingresa tus comentarios del Proyecto</string>
+    <string name="tvInterrupcionesTL">Ingresa interrupciones</string>
 </resources>

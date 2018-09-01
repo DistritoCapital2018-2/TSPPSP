@@ -30,6 +30,10 @@
         <activity
             android:name=".Activities.ProjectRegisterActivity"
             android:label="@string/title_activity_project_register"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.DetalleProyectoActivity"
+            android:label="@string/title_activity_detalle_proyecto"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

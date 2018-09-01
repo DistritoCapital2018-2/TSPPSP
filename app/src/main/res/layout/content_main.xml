@@ -24,54 +24,14 @@
     <ListView
         android:id="@+id/lvProyectosM"
         android:layout_width="0dp"
-        android:layout_height="364dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDefectlogM" />
-
-    <Button
-        android:id="@+id/btnTimelogM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/boton_rojo_style"
-        android:text="@string/btnTimelogM"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleM" />
-
-    <Button
-        android:id="@+id/btnDefectlogM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/boton_azul_oscuro"
-        android:paddingLeft="9dp"
-        android:paddingRight="9dp"
-        android:text="@string/btnDefectlogM"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleM" />
-
-    <Button
-        android:id="@+id/btnSummaryM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/boton_rojo_style"
-        android:text="@string/btnSummaryM"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitleM" />
 
 </android.support.constraint.ConstraintLayout>

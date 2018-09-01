@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -22,10 +23,9 @@ import sena.edu.co.tsppsp.modelos.ProyectoModel;
 import sena.edu.co.tsppsp.slqLiteOpenHelper.ConexionSQLiteOpenHelper;
 import sena.edu.co.tsppsp.tabla.Tablas;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity  {
     
     TextView tvTitleM;
-    Button btnTimelogM, btnDefectlogM, btnSummaryM;
     ListView lvProyectosM;
     Typeface typeface;
     ConexionSQLiteOpenHelper conexion;
@@ -39,9 +39,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Vistas Base
         tvTitleM = findViewById(R.id.tvTitleM);
-        btnTimelogM = findViewById(R.id.btnTimelogM);
-        btnDefectlogM = findViewById(R.id.btnDefectlogM);
-        btnSummaryM = findViewById(R.id.btnSummaryM);
         lvProyectosM = findViewById(R.id.lvProyectosM);
 
         // Tipografia
@@ -51,31 +48,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         conexion = new ConexionSQLiteOpenHelper(this, Tablas.DATABASE,null,1);
 
-        // Asignacion de evento OnClick en Botones
-        btnTimelogM.setOnClickListener(this);
-        btnDefectlogM.setOnClickListener(this);
-        btnSummaryM.setOnClickListener(this);
 
         // Floating
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fbAgregarProyecto);
 
         fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //abrirAlertRegistroNuevoProyecto();
-                    abrirActivityRegisto();
-                }});
+            @Override
+            public void onClick(View view) {
+                //abrirAlertRegistroNuevoProyecto();
+                abrirActivityRegisto();
+            }});
 
-        // ocultarBotones();
+        lvProyectosM.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
+                Toast.makeText(getApplicationContext(),""+adapterView.getItemAtPosition(posicion),Toast.LENGTH_SHORT).show();
+                //TODO: Crear Intent de DetalleProyecto y pasar la posicion
+            }
+        });
+
         consultarProyectos();
 
+
+
     }
 
-
-    // Metodo Encargado de ocultar los Botones "btnTimelogM","btnDefectlogM","btnSummaryM" al abrir la actividad
-    private void ocultarBotones() {
-
-    }
 
     // Metodo Encargado de consultar los Proyectos en la BD
     private void consultarProyectos() {
@@ -123,24 +120,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(new Intent(this, ProjectRegisterActivity.class));
     }
 
-    // Metodo OnClick
-    @Override
-    public void onClick(View view) {
-        switch (view.getId())
-        {
-            case R.id.btnTimelogM:
-                Intent timeLogIntent= new Intent(this, TimeLogActivity.class);
-                timeLogIntent.putExtra("id_proyecto",1); // TODO: Enviar dato del item seleccionado de la lista
-                startActivity(timeLogIntent);
-                break;
-            case R.id.btnDefectlogM:
-                Intent defectLogIntent= new Intent(this, TimeLogActivity.class);
-                defectLogIntent.putExtra("id_proyecto",1); // TODO: Enviar dato del item seleccionado de la lista
-                startActivity(defectLogIntent);
-                break;
-            case R.id.btnSummaryM:
-
-                break;
-        }
-    }
 }

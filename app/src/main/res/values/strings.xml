@@ -30,9 +30,10 @@
     <string name="tvInterrupcionesTL">Ingresa interrupciones</string>
     <string name="btnTimelogM">TimeLog</string>
     <string name="btnDefectlogM">DefectLog</string>
-    <string name="btnSummaryM">Summary</string>
+    <string name="btnSummaryM">Project Plan Summary</string>
     <string name="etNombreProyectoCP">Ingresa el nombre del Proyecto</string>
     <string name="etTitleCP">Crear Proyecto</string>
     <string name="btnCrearProyectoCP">Crear</string>
     <string name="title_activity_detalle_proyecto">DetalleProyectoActivity</string>
+    <string name="tvNombreProyectoD">Nombre Proyecto</string>
 </resources>

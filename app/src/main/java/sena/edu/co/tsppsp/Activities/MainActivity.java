@@ -64,6 +64,9 @@ public class MainActivity extends AppCompatActivity  {
             public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
                 Toast.makeText(getApplicationContext(),""+adapterView.getItemAtPosition(posicion),Toast.LENGTH_SHORT).show();
                 //TODO: Crear Intent de DetalleProyecto y pasar la posicion
+                Intent detalleProyectoIntent = new Intent(getApplicationContext(),DetalleProyectoActivity.class);
+                detalleProyectoIntent.putExtra("id_proyecto",posicion);
+                startActivity(detalleProyectoIntent);
             }
         });
 

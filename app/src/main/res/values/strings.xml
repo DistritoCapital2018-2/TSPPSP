@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TSP/PSP</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_time_log">TimeLogActivity</string>
+    <string name="title_activity_time_log">TimeLog</string>
     <string name="title_activity_defect_log">DefectLogActivity</string>
 
     <!-- Main Activity-->
@@ -10,7 +10,11 @@
     <string name="tv_alert_d_crear_proyecto">Crear Proyecto</string>
     <string name="et_alert_d_nombre_proyecto">Ingresa el nombre del Proyecto</string>
     <string name="btn_alert_d_registrar_proyecto">Registrar Proyecto</string>
+
+    <!-- Register Activity-->
     <string name="title_activity_project_register">ProjectRegisterActivity</string>
+
+    <!-- Register Activity-->
     <string name="tvTitleTimeLog">TimeLog</string>
     <string name="tvPhaseTL">Phase</string>
     <string name="tvStartTL">Start</string>
@@ -22,6 +26,13 @@
     <string name="btnRegistrarTL">Registrar</string>
     <string name="etFechaInicioTL">Fecha Inicio</string>
     <string name="tvFechaFinalTL">Fecha Final</string>
-    <string name="tvComentariosTL">Ingresa tus comentarios del Proyecto</string>
+    <string name="tvComentariosTL">Ingresa tus comentarios</string>
     <string name="tvInterrupcionesTL">Ingresa interrupciones</string>
+    <string name="btnTimelogM">TimeLog</string>
+    <string name="btnDefectlogM">DefectLog</string>
+    <string name="btnSummaryM">Summary</string>
+    <string name="etNombreProyectoCP">Ingresa el nombre del Proyecto</string>
+    <string name="etTitleCP">Crear Proyecto</string>
+    <string name="btnCrearProyectoCP">Crear</string>
+    <string name="title_activity_detalle_proyecto">DetalleProyectoActivity</string>
 </resources>

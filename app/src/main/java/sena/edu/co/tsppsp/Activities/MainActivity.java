@@ -1,101 +1,123 @@
 package sena.edu.co.tsppsp.Activities;
 
-import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TableLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import sena.edu.co.tsppsp.R;
+import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+import sena.edu.co.tsppsp.R;
+import sena.edu.co.tsppsp.modelos.ProyectoModel;
+import sena.edu.co.tsppsp.slqLiteOpenHelper.ConexionSQLiteOpenHelper;
+import sena.edu.co.tsppsp.tabla.Tablas;
+
+public class MainActivity extends AppCompatActivity  {
+    
+    TextView tvTitleM;
+    ListView lvProyectosM;
+    Typeface typeface;
+    ConexionSQLiteOpenHelper conexion;
+    ArrayList<ProyectoModel> listaProyectos;
+    ArrayList<String> listaProyectosString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        try {
 
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fbAgregarProyecto);
+        // Vistas Base
+        tvTitleM = findViewById(R.id.tvTitleM);
+        lvProyectosM = findViewById(R.id.lvProyectosM);
 
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //abrirAlertRegistroNuevoProyecto();
-                    abrirActivityRegisto();
-                }
-            });
-        } catch (Exception e)
-        {
-            Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
-        }
+        // Tipografia
+        typeface = Typeface.createFromAsset(getAssets(),"fonts/poorich.ttf");
+
+        tvTitleM.setTypeface(typeface);
+
+        conexion = new ConexionSQLiteOpenHelper(this, Tablas.DATABASE,null,1);
+
+
+        // Floating
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fbAgregarProyecto);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //abrirAlertRegistroNuevoProyecto();
+                abrirActivityRegisto();
+            }});
+
+        lvProyectosM.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
+                Toast.makeText(getApplicationContext(),""+adapterView.getItemAtPosition(posicion),Toast.LENGTH_SHORT).show();
+                //TODO: Crear Intent de DetalleProyecto y pasar la posicion
+            }
+        });
+
+        consultarProyectos();
+
+
+
     }
 
+
+    // Metodo Encargado de consultar los Proyectos en la BD
+    private void consultarProyectos() {
+        SQLiteDatabase db = conexion.getReadableDatabase();
+
+        ProyectoModel proyectoModel = null;
+        listaProyectos = new ArrayList<ProyectoModel>();
+        Cursor proyectosCursor = db.rawQuery("SELECT * FROM "+Tablas.TABLA_PROYECTO,null);
+        while (proyectosCursor.moveToNext())
+        {
+            proyectoModel = new ProyectoModel();
+            proyectoModel.setId(proyectosCursor.getInt(0));
+            proyectoModel.setNombre_p(proyectosCursor.getString(1));
+
+            // TODO: Terminar el relleno del objeto y crear el adapter
+
+
+            listaProyectos.add(proyectoModel);
+        }
+
+        try {
+
+            adatarLista(listaProyectos);
+        }catch (Exception e) {
+            Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    private void adatarLista(ArrayList<ProyectoModel> listaProyectos) {
+
+        listaProyectosString = new ArrayList<String>();
+        for (int i = 0; i < listaProyectos.size();i++)
+        {
+            listaProyectosString.add(listaProyectos.get(i).getId()+" - "+ listaProyectos.get(i).getNombre_p());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.spinner_style, listaProyectosString);
+        lvProyectosM.setAdapter(adapter);
+    }
+
+
+    // Metodo encargado de abrir la actividad de ProjectRegisterActivity para crear un Proyecto nuevo
     private void abrirActivityRegisto() {
         startActivity(new Intent(this, ProjectRegisterActivity.class));
     }
 
-
-    @Nullable
-    @Override
-    protected Dialog onCreateDialog(int id, Bundle args) {
-        return super.onCreateDialog(id, args);
-    }
-
-    // Metodo encargado de abrir AlertDialog de Registro de Nuevo Proyectos
-    private void abrirAlertRegistroNuevoProyecto() {
-
-        AlertDialog.Builder alertRegistro = new AlertDialog.Builder(getApplicationContext());
-        
-        View view = View.inflate(this,R.layout.alert_dialog_registo_nuevo_proyecto,null);
-
-        EditText    et_alert_d_nombre_proyecto = view.findViewById(R.id.et_alert_d_nombre_proyecto);
-        Button      btn_alert_d_registrar_proyecto = view.findViewById(R.id.btn_alert_d_registrar_proyecto);
-        
-        btn_alert_d_registrar_proyecto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Registrado",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        alertRegistro.setView(view);
-
-        AlertDialog dialog = alertRegistro.create();
-        dialog.show();
-
-        // TODO: Terminar logica AlertDialog
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

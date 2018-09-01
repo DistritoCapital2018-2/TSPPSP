@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TSP/PSP</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_time_log">TimeLogActivity</string>
+    <string name="title_activity_time_log">TimeLog</string>
     <string name="title_activity_defect_log">DefectLogActivity</string>
 
     <!-- Main Activity-->
@@ -28,4 +28,10 @@
     <string name="tvFechaFinalTL">Fecha Final</string>
     <string name="tvComentariosTL">Ingresa tus comentarios</string>
     <string name="tvInterrupcionesTL">Ingresa interrupciones</string>
+    <string name="btnTimelogM">TimeLog</string>
+    <string name="btnDefectlogM">DefectLog</string>
+    <string name="btnSummaryM">Summary</string>
+    <string name="etNombreProyectoCP">Ingresa el nombre del Proyecto</string>
+    <string name="etTitleCP">Crear Proyecto</string>
+    <string name="btnCrearProyectoCP">Crear</string>
 </resources>

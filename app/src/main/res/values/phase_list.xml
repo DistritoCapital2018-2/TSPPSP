@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="phase_list">
+        <item>SELECCIONAR</item>
         <item>PLAN</item>
         <item>DLD</item>
         <item>CODE</item>
